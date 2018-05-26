@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Support Ticket-By Blue IT Marketing Pty LTD</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="/static/dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="/static/dist/css/skins/skin-blue.min.css">
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<script src="/static/plugins/jQuery/jquery-2.2.3.min.js"></script>
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini" id="MyBody">
+<div class="wrapper">
+    <div id="MainHeaderDiv"></div>
+    <div id="SideBarDiv"></div>
+    <div class="content-wrapper">
+    <section class="content-header">
+      <h1>
+         Blue IT Marketing Messaging
+        <small>Contact and Messaging Management</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active"> Tickets</li>
+      </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="box box-body with-border">
+                    <div class="box box-header with-border">
+                        <h3 class="box-title"> My Ticket</h3>
+                    </div>
+                    <ul class="list-group-unbordered">
+                        <li class="list-group-item"> Names : {{ thisTicketUser.strNames }}</li>
+                        <li class="list-group-item"> Surname : {{ thisTicketUser.strSurname }}</li>
+                        <li class="list-group-item"> Cell : {{ thisTicketUser.strCell }}</li>
+                        <li class="list-group-item"> Email : {{ thisTicketUser.strEmail }}</li>
+                    </ul>
+                </div>
+                <div class="box box-body with-border">
+                    <div class="box box-header with-border">
+                        <h3 class="box-title"> Helpdesk Professional</h3>
+                    </div>
+                    <ul class="list-group-unbordered">
+                        <li class="list-group-item"> Names   : </li>
+                        <li class="list-group-item"> Surname : </li>
+                        <li class="list-group-item"> Online :  </li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="box box-body with-border">
+                    <div class="box box-header with-border">
+                        <h3 class="box-title"> {{ thisTicket.strSubject }}</h3>
+                        <br><small>Date : {{  thisTicket.strDateCreated }}, {{ thisTicket.strTimeCreated }}</small>
+                    </div>
+                    <blockquote>
+                        {{ thisTicket.strBody }}
+                    </blockquote>
+
+                <div class="box box-info direct-chat direct-chat-info">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Ticket System</h3>
+
+                  <div class="box-tools pull-right">
+                    <span data-toggle="tooltip" title="3 New Messages" class="badge bg-yellow"></span>
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-box-tool" data-toggle="tooltip" title="Contacts" data-widget="chat-pane-toggle">
+                      <i class="fa fa-comments"></i></button>
+                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                    </button>
+                  </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                  <!-- Conversations are loaded here -->
+                <div id="TicketSystemINFDIV">
+                  <div class="direct-chat-messages">
+                    <!-- Message. Default to the left -->
+                    {%  for thisComment in thisCommentList %}
+                      {% if thisComment.isClientComment == true  %}
+                        <!-- Message to the right -->
+                        <div class="direct-chat-msg">
+                          <div class="direct-chat-info clearfix">
+                            <span class="direct-chat-timestamp pull-left">{{ thisComment.strCommentDate }} {{ thisComment.strCommentTime }}</span>
+                          </div>
+                          <div class="direct-chat-text">
+                            {{ thisComment.strComment }}
+                          </div>
+                          <!-- /.direct-chat-text -->
+                        </div>
+                      {%  else %}
+                        <!-- Message to the right -->
+                        <div class="direct-chat-msg right">
+                          <div class="direct-chat-info clearfix">
+                            <span class="direct-chat-timestamp pull-left">{{ thisComment.strCommentDate }} {{ thisComment.strCommentTime }}</span>
+                          </div>
+                          <div class="direct-chat-text">
+                            {{ thisComment.strComment }}
+                          </div>
+                          <!-- /.direct-chat-text -->
+                        </div>
+                      {%  endif %}
+                  {%  endfor %}
+                  </div>
+                </div>
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer">
+                  <form class="form-horizontal">
+                    <input type="hidden" class="hidden" id="strTicketID" value="{{ thisTicket.strTicketID }}">
+                    <input type="hidden" class="hidden" id="strThreadID" value="{{ thisThread.strThreadID }}">
+                    <input type="hidden" class="hidden" id="strUserID" value="{{ thisTicketUser.strUserID }}">
+
+
+                    <div class="input-group">
+                      <input type="text" name="message" placeholder="Type Message ..." class="form-control" id="strComment">
+                          <span class="input-group-btn">
+                            <button type="button" class="btn btn-warning btn-flat" id="SendMessageButt">Send</button>
+                          </span>
+                    </div>
+
+                  </form>
+                </div>
+              </div>
+             </div>
+                </div>
+        </div>
+    </section>
+
+    </div>
+    <div id="FooterDiv"></div>
+    <div class="control-sidebar-bg"></div>
+</div>
+
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+<script src="/static/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="/static/plugins/fastclick/fastclick.min.js"></script>
+<script src="/static/dist/js/app.min.js"></script>
+<script src="/static/dist/js/pages/contact/ticketChat.js"></script>
+
+<script async defer type="text/javascript">$(document).ready(function(){$('#MainHeaderDiv').load("/navigation/header")});</script>
+<script async defer type="text/javascript">$(document).ready(function(){$('#SideBarDiv').load("/navigation/sidebar")});</script>
+<script async defer type="text/javascript">$(document).ready(function(){$('#FooterDiv').load("/navigation/footer")});</script>
+
+</body>
+</html>

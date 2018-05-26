@@ -1,0 +1,180 @@
+
+<div class="box box-body">
+    <div class="box box-header">
+        <h3 class="box-title"> <strong>Project Progress</strong></h3>
+    </div>
+
+
+    <div class="nav-tabs-custom">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#ProgressIndicator" data-toggle="tab"><button type="button" class="btn btn-app btn-flat btn-block"> <i class="glyphicon glyphicon-equalizer"> </i> Progress</button></a></li>
+            <li><a href="#ProjectChat" data-toggle="tab"><button type="button" class="btn btn-app btn-flat btn-block"> <i class="glyphicon glyphicon-comment"> </i> Chat</button></a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="active tab-pane" id="ProgressIndicator">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                          <label class="col-sm-6 pull-left"> Project Name </label>
+                          <div class="col-sm-12">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="glyphicon glyphicon-info-sign"> </i>
+                                </div>
+                                <input type="text" class="form-control" id="strProjectName" value="{{ thisProject.strProjectName }}" readonly="readonly">
+                            </div>
+                          </div>
+                    </div>
+
+                    <div class="form-group">
+                          <label class="col-sm-6 pull-left"> Date Started </label>
+                          <div class="col-sm-12">
+                              <div class="input-group">
+                                  <div class="input-group-addon">
+                                      <i class="glyphicon glyphicon-calendar"> </i>
+                                  </div>
+                                  <input type="text" class="form-control" id="strDateStarted" readonly="readonly">
+                              </div>
+                          </div>
+                    </div>
+                    <div class="form-group">
+                          <label class="col-sm-6 pull-left"> Estimated Completion Date </label>
+                          <div class="col-sm-12">
+                              <div class="input-group">
+                                  <div class="input-group-addon">
+                                      <i class="glyphicon glyphicon-calendar"> </i>
+                                  </div>
+                                  <input type="text" class="form-control" id="strDateCompleted" readonly="readonly">
+                              </div>
+                          </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-6 pull-left"> Progress Indicator</label>
+                        <div class="col-sm-12">
+                            <progress id="ProgressBar" value="25" max="100" class="form-control">25 %</progress>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-6 pull-left"> Mark Progress </label>
+                        <div class="col-sm-12">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="glyphicon glyphicon-scale"> </i>
+                                </div>
+                            <select class="form-control" id="strIndicateProgress">
+                                <option value="25%"> Add 25 % </option>
+                                <option value="100%"> Mark as Completed</option>
+                            </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                          <label class="col-sm-6 pull-left"> </label>
+                          <div class="col-sm-12">
+                              <button type="button" class="btn btn-app btn-block btn-flat" id="strUpdateProjectFiles"><strong><i class="glyphicon glyphicon-cloud-upload"> </i> Update </strong></button>
+                          </div>
+                    </div>
+                </form>
+
+            </div>
+            <div class="tab-pane" id="ProjectChat">
+                      <div class="box box-primary direct-chat direct-chat-primary">
+                        <div class="box-header with-border">
+                          <h3 class="box-title">Project Chat</h3>
+
+                          <div class="box-tools pull-right">
+                            <span data-toggle="tooltip" title="3 New Messages" class="badge bg-light-blue"> 5 </span>
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-box-tool" data-toggle="tooltip" title="Contacts" data-widget="chat-pane-toggle">
+                              <i class="fa fa-comments"></i></button>
+                            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                          </div>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                          <!-- Conversations are loaded here -->
+                          <div class="direct-chat-messages">
+                            <!-- Message. Default to the left -->
+                          <div id="ChatMessagesINFDIV">
+                          {% for thisChat in thisChatMessagesList %}
+                            {% if thisChat.strIsClient == false %}
+                            <div class="direct-chat-msg">
+                              <div class="direct-chat-info clearfix">
+                                <span class="direct-chat-name pull-left">Blue IT Marketing</span>
+                                <span class="direct-chat-timestamp pull-right">{{ thisChat.strTimeStamp }}</span>
+                              </div>
+                              <!-- /.direct-chat-info -->
+                              <img class="direct-chat-img" src="/static/dist/img/boxed-bg.png" alt="Message User Image"><!-- /.direct-chat-img -->
+                              <div class="direct-chat-text">
+                                {{ thisChat.strMessage }}
+                              </div>
+                              <!-- /.direct-chat-text -->
+                            </div>
+                            <!-- /.direct-chat-msg -->
+                            {% else %}
+                            <!-- Message to the right -->
+                            <div class="direct-chat-msg right">
+                              <div class="direct-chat-info clearfix">
+                                <span class="direct-chat-name pull-right">Client </span>
+                                <span class="direct-chat-timestamp pull-left">{{ thisChat.strTimeStamp }}</span>
+                              </div>
+                              <!-- /.direct-chat-info -->
+                              <img class="direct-chat-img" src="/static/dist/img/boxed-bg.png" alt="Message User Image"><!-- /.direct-chat-img -->
+                              <div class="direct-chat-text">
+                                {{ thisChat.strMessage }}
+                              </div>
+                              <!-- /.direct-chat-text -->
+                            </div>
+                            <!-- /.direct-chat-msg -->
+                            {% endif %}
+                          {% endfor %}
+                           </div>
+                          </div>
+                          <!--/.direct-chat-messages-->
+
+                          <!-- Contacts are loaded here -->
+                          <div class="direct-chat-contacts">
+                            <ul class="contacts-list">
+                              <li>
+                                <a href="#">
+                                  <img class="contacts-list-img" src="/static/dist/img/user1-128x128.jpg" alt="User Image">
+
+                                  <div class="contacts-list-info">
+                                        <span class="contacts-list-name">
+                                          Count Dracula
+                                          <small class="contacts-list-date pull-right">2/28/2015</small>
+                                        </span>
+                                    <span class="contacts-list-msg">How have you been? I was...</span>
+                                  </div>
+                                  <!-- /.contacts-list-info -->
+                                </a>
+                              </li>
+                              <!-- End Contact Item -->
+                            </ul>
+                            <!-- /.contatcts-list -->
+                          </div>
+                          <!-- /.direct-chat-pane -->
+                        </div>
+                        <!-- /.box-body -->
+                        <div class="box-footer">
+                          <form action="#" method="post">
+                            <input type="hidden" class="hidden" id="strProjectID" value="{{ thisProject.strProjectID }}">
+                            <div class="input-group">
+                              <input type="text" name="vstrMessage" id="strMessage" placeholder="Type Message ..." class="form-control">
+                                  <span class="input-group-btn">
+                                    <button type="button" class="btn btn-primary btn-flat" id="SendButt">Send</button>
+                                  </span>
+                            </div>
+                          </form>
+                        </div>
+                        <!-- /.box-footer-->
+                      </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<script src="/static/dist/js/pages/hireus/client-manager-project-progress.js"></script>

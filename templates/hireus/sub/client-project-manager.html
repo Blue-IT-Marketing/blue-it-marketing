@@ -1,0 +1,107 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Hire Us | Blue IT Marketing</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="/static/dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="/static/dist/css/skins/skin-blue.min.css">
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<script src="/static/plugins/jQuery/jquery-2.2.3.min.js"></script>
+
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+  <div id="MainHeaderDiv"></div>
+   <div id="SideBarDiv"></div>
+  <div class="content-wrapper">
+    <section class="content-header">
+      <h1>
+        Blue IT Marketing Pty LTD
+        <small>Hire Us | Hire Blue IT Marketing to develop your Business Applications </small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active"><a href="/hireus"> <i class="fa fa-code-fork"> </i> Hire Us</a></li>
+        <li class="active"><i class="fa fa-code-fork"> </i> Project Manager</li>
+      </ol>
+    </section>
+    <section class="content">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="box box-primary">
+            <div class="box box-header">
+              <h3 class="box-title"> <strong>Hire Us</strong></h3><br>
+                <small> <strong>Client Projects</strong></small>
+            </div>
+              <div class="box box-primary">
+
+                  <ul class="list-group-unbordered">
+                      <li class="list-group-item">{{ thisProject.strProjectTitle }}</li>
+                  </ul>
+
+              </div>
+                <div class="box box-footer">
+                  <a href="/hireus" type="button" class="btn btn-lg btn-flat btn-app btn-block margin-bottom" id="HireUsButt"><strong> <i class="fa fa-code"> </i> Hire Us </strong></a>
+                  <button type="button" class="btn btn-lg btn-flat btn-app btn-block" id="ProjectButt"><strong> <i class="glyphicon glyphicon-registration-mark"> </i> Project  </strong></button>
+                  <button type="button" class="btn btn-lg btn-flat btn-app btn-block" id="ProjectProgressButt"><strong> <i class="glyphicon glyphicon-list-alt"> </i> Project Progress </strong></button>
+                  <button type="button" class="btn btn-lg btn-flat btn-app btn-block" id="ProjectFilesButt"><strong> <i class="glyphicon glyphicon-credit-card"> </i> Project Files  </strong></button>
+                </div>
+            <div class="box box-footer with-border">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- menubar -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:300px;height:600px"
+                 data-ad-client="ca-pub-7790567144101692"
+                 data-ad-slot="7742358578"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <div class="box box-body">
+            <div class="box box-header">
+              <h3 class="box-title"> <strong>Blue IT Marketing</strong></h3><br>
+              <small><strong>Developing Intelligent Business &amp; Marketing Services for you</strong></small>
+            </div>
+            <input type="hidden" class="hidden" id="strProjectID" value="{{ thisProject.strProjectID }}">
+
+            <div id="ProjectManagerINFDIV">
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+  </div>
+  <div id="FooterDiv"></div>
+
+  <div class="control-sidebar-bg"></div>
+</div>
+<!-- Bootstrap 3.3.6 -->
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+<script src="/static/plugins/fastclick/fastclick.min.js"></script>
+<script src="/static/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="/static/dist/js/app.min.js"></script>
+<script src="/static/dist/js/pages/hireus/client-project-manager.js"></script>
+<script type="text/javascript">$(document).ready(function(){$('#MainHeaderDiv').load("/navigation/header")});</script>
+<script type="text/javascript">$(document).ready(function(){$('#SideBarDiv').load("/navigation/sidebar")});</script>
+<script type="text/javascript">$(document).ready(function(){$('#FooterDiv').load("/navigation/footer")});</script>
+</body>
+</html>

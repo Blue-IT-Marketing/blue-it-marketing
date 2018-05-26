@@ -1,0 +1,9 @@
+
+handlers:
+
+- url : /login
+  script: accounts.app
+
+- url: /logout
+  script: accounts.app
+

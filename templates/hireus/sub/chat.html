@@ -1,0 +1,33 @@
+
+              {% for thisChat in thisChatMessagesList %}
+                {% if thisChat.strIsClient == false %}
+                <div class="direct-chat-msg">
+                  <div class="direct-chat-info clearfix">
+                    <span class="direct-chat-name pull-left">Blue IT Marketing</span>
+                    <span class="direct-chat-timestamp pull-right">{{ thisChat.strTimeStamp }}</span>
+                  </div>
+                  <!-- /.direct-chat-info -->
+                  <img class="direct-chat-img" src="/static/dist/img/boxed-bg.png" alt="Message User Image"><!-- /.direct-chat-img -->
+                  <div class="direct-chat-text">
+                    {{ thisChat.strMessage }}
+                  </div>
+                  <!-- /.direct-chat-text -->
+                </div>
+                <!-- /.direct-chat-msg -->
+                {% else %}
+                <!-- Message to the right -->
+                <div class="direct-chat-msg right">
+                  <div class="direct-chat-info clearfix">
+                    <span class="direct-chat-name pull-right">Client </span>
+                    <span class="direct-chat-timestamp pull-left">{{ thisChat.strTimeStamp }}</span>
+                  </div>
+                  <!-- /.direct-chat-info -->
+                  <img class="direct-chat-img" src="/static/dist/img/boxed-bg.png" alt="Message User Image"><!-- /.direct-chat-img -->
+                  <div class="direct-chat-text">
+                    {{ thisChat.strMessage }}
+                  </div>
+                  <!-- /.direct-chat-text -->
+                </div>
+                <!-- /.direct-chat-msg -->
+                {% endif %}
+              {% endfor %}

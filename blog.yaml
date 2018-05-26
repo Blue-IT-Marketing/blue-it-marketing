@@ -1,0 +1,9 @@
+
+
+handlers:
+
+- url: /blog
+  script: blog.app
+
+- url: /blog/.*
+  script: blog.app

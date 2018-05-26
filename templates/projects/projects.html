@@ -1,0 +1,323 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Projects | Blue IT Marketing</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="/static/dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="/static/dist/css/skins/skin-blue.min.css">
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<script src="/static/plugins/jQuery/jquery-2.2.3.min.js"></script>
+
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+  <div id="MainHeaderDiv"></div>
+   <div id="SideBarDiv"></div>
+  <div class="content-wrapper">
+    <section class="content-header">
+      <h1>
+        Blue IT Marketing Pty LTD
+        <small>Project Development</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active"><i class="fa fa-code-fork"> </i> Projects</li>
+      </ol>
+    </section>
+    <section class="content">
+      <div class="row">
+        <div class="col-md-3" id="LeftSideBar">
+          <div class="box box-primary">
+            <div class="box box-header">
+                <h3 class="box-title"> <strong>Present Projects</strong> </h3><br>
+                <small><strong>Blue IT Marketing ongoing Projects</strong> </small>
+            </div>
+            <div class="box box-footer">
+              <button class="btn btn-lg btn-app btn-warning btn-flat btn-block margin-bottom" id="MaximizeProjectScreenButt"><strong><i class="glyphicon glyphicon-align-right"> </i>  Maximize Project Screen</strong></button>
+              <button type="button" class="btn btn-lg btn-app btn-flat btn-block" id="ChurchAdminButt"><strong><i class="fa fa-code"> </i>  Church Admin </strong></button>
+              <button type="button" class="btn btn-lg btn-app btn-flat btn-block" id="CoverManButt"><strong><i class="fa fa-code"> </i>  Cover Management </strong></button>
+              <button type="button" class="btn btn-lg btn-app btn-flat btn-block" id="HotelManButt"><strong><i class="fa fa-code"> </i>  Hotel Management </strong></button>
+              <button type="button" class="btn btn-lg btn-app btn-flat btn-block" id="SMSMessagingButt"><strong><i class="fa fa-code"> </i>  SMS Messaging </strong></button>
+              <button type="button" class="btn btn-lg btn-app btn-flat btn-block" id="HRSystemsButt"><strong><i class="fa fa-code"> </i>  HR Systems </strong></button>
+              <button type="button" class="btn btn-lg btn-app btn-flat btn-block" id="SchoolManButt"><strong><i class="fa fa-code"> </i>  School Management </strong></button>
+              <button type="button" class="btn btn-lg btn-app btn-flat btn-block" id="LoansManButt"><strong><i class="fa fa-code"> </i>  Loans Management </strong></button>
+              <button type="button" class="btn btn-lg btn-app btn-flat btn-block" id="ClientTraceButt"><strong><i class="fa fa-code"> </i>  Client Trace </strong></button>
+              <button type="button" class="btn btn-lg btn-app btn-flat btn-block" id="P2PTradersButt"><strong><i class="fa fa-code"> </i>  P2P Traders </strong></button>
+              <button type="button" class="btn btn-lg btn-app btn-flat btn-block" id="JobCloudButt"><strong><i class="fa fa-code"> </i>  Job Cloud </strong></button>
+              <button type="button" class="btn btn-lg btn-app btn-flat btn-block" id="FreelancingSolutionsButt"><strong><i class="fa fa-code"> </i>  Freelancing Solutions </strong></button>
+              <button type="button" class="btn btn-lg btn-app btn-flat btn-block" id="BusAdminButt"><strong><i class="fa fa-code"> </i>  Bus Admin </strong></button>
+            </div>
+          </div>
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- menubar -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:300px;height:600px"
+                 data-ad-client="ca-pub-7790567144101692"
+                 data-ad-slot="7742358578"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+
+        </div>
+        <div class="col-md-6" id="ProjectScreen">
+          <div class="box  box-body">
+            <div class="box box-header">
+                <h3 class="box-title"> <strong>Blue IT Marketing Projects</strong></h3>
+            </div>
+
+            <div id="ProjectLoaderINFDIV"></div>
+
+          </div>
+
+        </div>
+        <div class="col-md-3" id="RightSideBar">
+             <div class="box box-primary">
+                <div class="box box-header with-border">
+                        <h3 class="box-title"><strong>Feature Suggestions</strong> </h3>
+                  <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                  </div>
+
+                    <div class="box-body">
+                  <form class="form-horizontal">
+
+                      <div class="form-group">
+                          <label class="col-sm-3 control-label pull-left"> Names</label>
+                          <div class="col-sm-12">
+                              <div class="input-group">
+                                  <div class="input-group-addon">
+                                      <i class="glyphicon glyphicon-user"></i>
+                                  </div>
+                                    <input type="text" class="form-control" id="strNames">
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label class="col-sm-3 control-label pull-left"> Surname</label>
+                          <div class="col-sm-12">
+                              <div class="input-group">
+                                  <div class="input-group-addon">
+                                      <i class="glyphicon glyphicon-user"> </i>
+                                  </div>
+                                    <input type="text" class="form-control" id="strSurname">
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label class="col-sm-3 control-label pull-left"> Cell</label>
+                          <div class="col-sm-12">
+                              <div class="input-group">
+                                  <div class="input-group-addon">
+                                      <i class="glyphicon glyphicon-phone"> </i>
+                                  </div>
+                                    <input type="text" class="form-control" id="strCell">
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label class="col-sm-3 control-label pull-left"> Email</label>
+                          <div class="col-sm-12">
+                              <div class="input-group">
+                                  <div class="input-group-addon">
+                                      <i class="glyphicon glyphicon-envelope"> </i>
+                                  </div>
+                                    <input type="text" class="form-control" id="strEmail">
+                              </div>
+                          </div>
+                      </div>
+
+
+                      <div class="form-group">
+                          <label class="col-sm-3"> App</label>
+                          <div class="col-sm-12">
+                              <div class="input-group">
+                                  <div class="input-group-addon">
+                                      <i class="glyphicon glyphicon-folder-close"> </i>
+                                  </div>
+                                <select id="strAppSelect" class="form-control">
+                                    <option value="church-admin">Church Admin</option>
+                                    <option value="cover-manager">Cover Management</option>
+                                    <option value="hotel-manager">Hotel Management</option>
+                                    <option value="sms-messaging">SMS Messaging</option>
+                                    <option value="hr-systems">HR Systems</option>
+                                    <option value="school-management">School Management</option>
+                                    <option value="loans-management">Loans Management</option>
+                                    <option value="Client-Trace">Client Trace</option>
+                                    <option value="p2p-traders">P2P Traders</option>
+                                    <option value="job-cloud">Job Cloud</option>
+                                    <option value="freelancing-solutions">Freelancing Solutions</option>
+                                    <option value="bus-admin">Bus Administration</option>
+                                </select>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="col-sm-3"> Feature</label>
+                        <div class="col-sm-12">
+                          <div class="input-group">
+                              <div class="input-group-addon">
+                                  <i class="glyphicon glyphicon-question-sign"> </i>
+                              </div>
+                              <textarea id="strFeature" class="form-control"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="col-sm-12">
+                          <button type="button" class="btn btn-lg btn-app btn-block" id="SubmitFeatureButt"><strong> <i class="glyphicon glyphicon-cloud-upload"> </i>  Submit Feature</strong></button>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                          <div class="col-sm-12">
+                              <div id="SubmitFeatureINFDIV"></div>
+                          </div>
+                      </div>
+                  </form>
+                    </div>
+                </div>
+            </div>
+             <div class="box box-primary">
+                <div class="box box-header with-border">
+                        <h3 class="box-title"><strong>Bug Reports</strong> </h3>
+                  <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                  </div>
+
+                    <div class="box-body">
+                    <form class="form-horizontal">
+
+                                      <div class="form-group">
+                                          <label class="col-sm-3 control-label pull-left"> Names</label>
+                                          <div class="col-sm-12">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="glyphicon glyphicon-user"> </i>
+                                                </div>
+                                                <input type="text" class="form-control" id="strBugNames">
+                                            </div>
+                                          </div>
+                                      </div>
+
+                                      <div class="form-group">
+                                          <label class="col-sm-3 control-label pull-left"> Surname</label>
+                                          <div class="col-sm-12">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="glyphicon glyphicon-user"> </i>
+                                                </div>
+                                                <input type="text" class="form-control" id="strBugSurname">
+                                            </div>
+                                          </div>
+                                      </div>
+                                      <div class="form-group">
+                                          <label class="col-sm-3 control-label pull-left"> Cell</label>
+                                          <div class="col-sm-12">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="glyphicon glyphicon-phone"> </i>
+                                                </div>
+                                                <input type="text" class="form-control" id="strBugCell">
+                                            </div>
+                                          </div>
+                                      </div>
+                                      <div class="form-group">
+                                          <label class="col-sm-3 control-label pull-left"> Email</label>
+                                          <div class="col-sm-12">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="glyphicon glyphicon-envelope"> </i>
+                                                </div>
+                                                <input type="text" class="form-control" id="strBugEmail">
+                                            </div>
+                                          </div>
+                                      </div>
+                                      <div class="form-group">
+                                          <label class="col-sm-3"> App</label>
+                                          <div class="col-sm-12">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="glyphicon glyphicon-folder-close"> </i>
+                                                </div>
+                                                    <select id="strBugAppSelect" class="form-control">
+                                                        <option value="church-admin">Church Admin</option>
+                                                        <option value="cover-manager">Cover Management</option>
+                                                        <option value="hotel-manager">Hotel Management</option>
+                                                        <option value="sms-messaging">SMS Messaging</option>
+                                                        <option value="hr-systems">HR Systems</option>
+                                                        <option value="school-management">School Management</option>
+                                                        <option value="loans-management">Loans Management</option>
+                                                        <option value="Client-Trace">Client Trace</option>
+                                                        <option value="p2p-traders">P2P Traders</option>
+                                                        <option value="job-cloud">Job Cloud</option>
+                                                        <option value="freelancing-solutions">Freelancing Solutions</option>
+                                                        <option value="bus-admin">Bus Administration</option>
+                                                    </select>
+                                            </div>
+                                          </div>
+                                      </div>
+                                      <div class="form-group">
+                                        <label class="col-sm-3"> Bug</label>
+                                        <div class="col-sm-12">
+                                          <div class="input-group">
+                                              <div class="input-group-addon">
+                                                  <i class="glyphicon glyphicon-question-sign"> </i>
+                                              </div>
+                                                  <textarea id="strBugDescription" class="form-control"></textarea>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="form-group">
+                                        <div class="col-sm-12">
+                                          <button type="button" class="btn btn-lg btn-app btn-block" id="SubmitBugButt"><strong> <i class="glyphicon glyphicon-cloud-upload"> </i>  Submit Bug </strong></button>
+                                        </div>
+                                      </div>
+                                      <div class="form-group">
+                                          <div class="col-sm-12">
+                                              <div id="SubmitBugINFDIV"></div>
+                                          </div>
+                                      </div>
+                                  </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+    </section>
+  </div>
+  <div id="FooterDiv"></div>
+
+  <div class="control-sidebar-bg"></div>
+</div>
+<!-- Bootstrap 3.3.6 -->
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+
+
+<script src="/static/plugins/fastclick/fastclick.min.js"></script>
+<script src="/static/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="/static/dist/js/pages/projects/projects.js"></script>
+<script src="/static/dist/js/app.min.js"></script>
+<script type="text/javascript">$(document).ready(function(){$('#MainHeaderDiv').load("/navigation/header")});</script>
+<script type="text/javascript">$(document).ready(function(){$('#SideBarDiv').load("/navigation/sidebar")});</script>
+<script type="text/javascript">$(document).ready(function(){$('#FooterDiv').load("/navigation/footer")});</script>
+</body>
+</html>

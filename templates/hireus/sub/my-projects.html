@@ -1,0 +1,138 @@
+<link rel="stylesheet" href="/static/plugins/datatables/dataTables.bootstrap.css">
+<div class="nav-tabs-custom">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#MyProjects" data-toggle="tab"><button type="button" class="btn btn-bitbucket btn-block"> <i class="glyphicon glyphicon-hd-video"> </i> My Projects</button></a></li>
+        <li><a href="#CreateProject" data-toggle="tab"><button type="button" class="btn btn-bitbucket btn-block"> <i class="glyphicon glyphicon-hdd"> </i> Create Project </button> </a> </li>
+    </ul>
+    <div class="tab-content">
+        <div class="active tab-pane" id="MyProjects">
+                <div class="box box-body with-border">
+                    <div class="box box-header with-border">
+                        <h3 class="box-title"> <strong>My Projects</strong></h3><br>
+                        <small>Manage your Project, Check Progress, and Make Payments</small>
+                    </div>
+                    <table id="MyProjectsTable" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <td>Title</td>
+                                <td>Details</td>
+                                <td>Date</td>
+                                <td>Time</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for thisProject in thisProjectList %}
+                            <tr>
+                                <td><a href="/hireus/manager/{{ thisProject.strProjectID}}" title="Manage your project, Check Progress Update Project and make Payments"> {{ thisProject.strProjectTitle }}</a></td>
+                                <td>{{ thisProject.strProjectDetails }}</td>
+                                <td>{{ thisProject.strDateCreated }}</td>
+                                <td>{{ thisProject.strTimeCreated }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                        <tfoot>
+                                <td>Title</td>
+                                <td>Details</td>
+                                <td>Date</td>
+                                <td>Time</td>
+                        </tfoot>
+                    </table>
+
+                </div>
+        </div>
+        <div class="tab-pane" id="CreateProject">
+            <div class="box box-body">
+                <div class="box box-header">
+                    <h3 class="box-title"> <strong>Create Project</strong></h3>
+                    <br><small>Create your Project by supplying as much information as you can about the project</small>
+                </div>
+
+                <form class="form-horizontal">
+                    <div class="form-group">
+                          <label class="col-sm-6 pull-left"> What work do you need done ? </label>
+                          <div class="col-sm-12">
+                              <div class="input-group">
+                                  <div class="input-group-addon">
+                                      <i class="fa fa-magic"> </i>
+                                  </div>
+                                <input type="text" class="form-control" id="strProjectTitle" placeholder="Business Web Application / Website Development">
+                              </div>
+                          </div>
+                    </div>
+                    <div class="form-group">
+                          <label class="col-sm-6 pull-left"> Provide More Details </label>
+                          <div class="col-sm-12">
+                              <div class="input-group">
+                                  <div class="input-group-addon">
+                                      <i class="fa fa-info"> </i>
+                                  </div>
+                                  <textarea id="strProjectDetails" class="form-control"></textarea>
+                              </div>
+                          </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-6 pull-left"> Your Estimated Budget</label>
+                        <div class="col-sm-12">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="glyphicon glyphicon-credit-card"> </i>
+                                </div>
+
+                            <select id="strBudget" class="form-control">
+                                <option value="100"> $ 100.00 </option>
+                                <option value="200"> $ 200.00 </option>
+                                <option value="500"> $ 500.00 </option>
+                                <option value="1000" selected="selected"> $ 1,000.00 </option>
+                                <option value="1500"> $ 1,500.00 </option>
+                                <option value="3000"> $ 3,000.00 </option>
+                                <option value="5000"> $ 5,000.00 </option>
+                                <option value="10000"> $ 10,000.00 </option>
+                            </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-6 pull-left">Expected Time To Delivery</label>
+                        <div class="col-sm-12">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="glyphicon glyphicon-calendar"> </i>
+                                </div>
+
+                            <select id="strExpectedDateOfDelivery" class="form-control">
+                                <option value="3"> 3 Weeks</option>
+                                <option value="4"> 4 Weeks</option>
+                                <option value="5"> 5 Weeks</option>
+                                <option value="6"> 6 Weeks</option>
+                                <option value="7"> 7 Weeks</option>
+                                <option value="8"> 8 Weeks</option>
+                                <option value="9"> 9 Weeks</option>
+                                <option value="10"> 10 Weeks</option>
+                            </select>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <button type="button" class="btn btn-lg btn-flat btn-app btn-block" id="CreateProjectButt"><strong> <i class="glyphicon glyphicon-cloud-upload"> </i> Create Project </strong></button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <div id="CreateProjectINFDIV"></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/static/dist/js/client.js"></script>
+<script src="/static/dist/js/pages/hireus/my-projects.js"></script>
+<script src="/static/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="/static/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script>$(function () {$('#MyProjectsTable').DataTable({"paging": true,"lengthChange": true,"searching": true,"ordering": true,"info": true,"autoWidth": true});});</script>

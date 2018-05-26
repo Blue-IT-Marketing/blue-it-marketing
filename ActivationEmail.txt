@@ -1,0 +1,35 @@
+def generate_activation_key(size=64, chars=string.ascii_lowercase + string.digits):
+  return ''.join(random.choice(chars) for x in range(size))
+
+
+def generate_activation_url(key):
+  return 'http://www.example.com/users/activate/' + key
+
+def Activate(name, to_addr):
+  sender, reciever = 'mymail@gmail.com', to_addr
+  act_url = generate_activation_url(generate_activation_key())
+  main_mssg = """
+  Dear %s,
+
+  Thak you for creating an account with Example.com. You are now just one click away from using your example account.
+  Please click the following link to verify this email address and activate your account.
+
+  Please Note, You must complete this step to become a registered member of example.
+  you will only need to visit this url once in order to activate your account.
+
+  ============================
+  Activation Link Below:
+  ============================
+
+  %s
+
+
+  if you are facing problems activating your account please contact our support team at
+  support@example.com
+
+  Best Regards,
+
+  Example Team
+  """ % (name, act_url)
+
+

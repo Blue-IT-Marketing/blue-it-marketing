@@ -1,0 +1,113 @@
+<link rel="stylesheet" href="/static/plugins/datatables/dataTables.bootstrap.css">
+<div class="nav-tabs-custom">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#MyPayments" data-toggle="tab"><button type="button" class="btn btn-bitbucket btn-block"> <i class="glyphicon glyphicon-credit-card"> </i> My Payments</button></a></li>
+        <li><a href="#CreatePayment" data-toggle="tab"><button type="button" class="btn btn-bitbucket btn-block"> <i class="fa fa-paypal"> </i> Create Payment </button> </a> </li>
+    </ul>
+    <div class="tab-content">
+        <div class="active tab-pane" id="MyPayments">
+            <table id="MyPaymentsTable" class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <td>Project Title</td>
+                                            <td>Invoice #</td>
+                                            <td>Date</td>
+                                            <td>Time</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for thisPayment in thisPaymentsList %}
+                                        <tr>
+                                            <td>{{ thisPayment.strProjectTitle }}</td>
+                                            <td>{{ thisProject.strInvoice }}</td>
+                                            <td>{{ thisProject.strDate }}</td>
+                                            <td>{{ thisProject.strTime }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                    <tfoot>
+                                            <td>Project Title</td>
+                                            <td>Invoice #</td>
+                                            <td>Date</td>
+                                            <td>Time</td>
+                                    </tfoot>
+                                </table>
+        </div>
+        <div class="tab-pane" id="CreatePayment">
+            <div class="box box-body">
+                <div class="box box-header">
+                    <h3 class="box-title"> <strong>Create Payment</strong></h3>
+                </div>
+                                <div class="form-group">
+                                    <label  class="col-sm-6 control-label pull-left"> Amount </label>
+                                    <div class="col-sm-12">
+                                        <div class="input-group">
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-dollar"> </i>
+                                            </div>
+                                            <input type="text" class="form-control" id="strAmountToPay" placeholder="100">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="strPaymentMethod" class="col-sm-6  pull-left">Payment Method</label>
+                                    <div class="col-sm-12">
+                                        <div class="input-group">
+                                            <div class="input-group-addon">
+                                                <i class="glyphicon glyphicon-credit-card"> </i>
+                                            </div>
+                                            <select id="strPaymentMethod" class="form-control">
+                                                <option value="EFT" disabled="disabled">EFT</option>
+                                                <option value="DirectDeposit" default="default">Direct Deposit</option>
+                                                <option value="CreditCard" disabled="disabled">Credit/Debit Card</option>
+                                                <option value="PayPal" disabled="disabled">PayPal</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label  class="col-sm-6 control-label pull-left"> Related Project</label>
+                                    <div class="col-sm-12">
+                                        <div class="input-group">
+                                            <div class="input-group-addon">
+                                                <i class="glyphicon glyphicon-th-list"> </i>
+                                            </div>
+                                        <select id="strRelatedProject" class="form-control">
+                                            {% for thisProject in thisProjectList %}
+                                              <option value="{{ thisProject.strProjectID }}" selected="selected">{{ thisProject.strProjectTitle }}</option>
+                                            {% endfor %}
+                                        </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label  class="col-sm-6 control-label pull-left"> </label>
+                                    <div class="col-sm-12">
+                                        <button type="button" class="btn btn-primary btn-block" id="PayButt"><strong><i class="fa fa-cc-paypal"> </i> Pay </strong></button>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-xs-12">
+                                      <p class="lead">Payment Methods:</p>
+                                      <img src="/static/dist/img/credit/visa.png" alt="Visa">
+                                      <img src="/static/dist/img/credit/mastercard.png" alt="Mastercard">
+                                      <img src="/static/dist/img/credit/paypal2.png" alt="Paypal">
+
+                                      <p class="text-muted well well-sm no-shadow" style="margin-top: 10px;">
+                                          <span class="fa fancybox-bg">Note credit card payments will be processed by PayPal  </span>
+                                      </p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label  class="col-sm-3 control-label pull-left"></label>
+                                    <div class="col-sm-6">
+                                        <div id="AddCreditsINFDIV"></div>
+                                    </div>
+                                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/static/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="/static/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script>$(function () {$('#MyPaymentsTable').DataTable({"paging": true,"lengthChange": true,"searching": true,"ordering": true,"info": true,"autoWidth": true});});</script>

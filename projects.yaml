@@ -1,0 +1,9 @@
+handlers:
+
+- url: /projects
+  script: projects.app
+
+
+- url: /projects/.*
+  script: projects.app
+

@@ -1,0 +1,7 @@
+handlers:
+
+- url: /hireus
+  script: hireus.app
+
+- url: /hireus/manager/.*
+  script: hireus.app

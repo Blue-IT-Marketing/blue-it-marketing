@@ -1,0 +1,7 @@
+
+
+handlers:
+
+
+- url: /newsletters
+  script: newsletters.app

@@ -1,0 +1,6 @@
+handlers:
+
+- url: /api
+  script: api.app
+- url: /api/.*
+  script: api.app

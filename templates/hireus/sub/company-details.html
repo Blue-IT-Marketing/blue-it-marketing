@@ -1,0 +1,449 @@
+
+
+<div class="box box-body">
+    <div class="box box-header">
+        <h3 class="box-title"> <strong>Company Details</strong></h3>
+    </div>
+    <form class="form-horizontal">
+          <div class="form-group">
+              <label class="col-sm-6 pull-left"> Company Name</label>
+              <div class="col-sm-12">
+                  <div class="input-group">
+                      <div class="input-group-addon">
+                          <i class="glyphicon glyphicon-info-sign"> </i>
+                      </div>
+                      {% if thisCompany.strCompanyDescription is none %}
+                            <input type="text" class="form-control" id="strCompanyName">
+                      {% else %}
+                            <input type="text" class="form-control" id="strCompanyName" value="{{ thisCompany.strCompanyName }}">
+                      {% endif %}
+                  </div>
+              </div>
+          </div>
+          <div class="form-group">
+              <label class="col-sm-6  pull-left"> Company Description</label>
+              <div class="col-sm-12">
+                 <div class="input-group">
+                     <div class="input-group-addon">
+                         <i class="glyphicon glyphicon-info-sign"> </i>
+                     </div>
+                        {% if thisCompany.strCompanyDescription is none %}
+                          <textarea id="strCompanyDescription" class="form-control"></textarea>
+                        {% else %}
+                            <textarea id="strCompanyDescription" class="form-control">{{ thisCompany.strCompanyDescription }}</textarea>
+                        {% endif %}
+                 </div>
+              </div>
+          </div>
+          <div class="form-group">
+              <label class="col-sm-6  pull-left"> Country</label>
+              <div class="col-sm-12">
+                  <div class="input-group">
+                      <div class="input-group-addon">
+                          <i class="fa fa-globe"> </i>
+                      </div>
+                      {% if thisCompany.strCountry is none %}
+                         <select id="strCountry" class="form-control">
+                          <option value="AFGHANISTAN">AFGHANISTAN; AF</option>
+                          <option value="ALAND ISLANDS">ALAND ISLANDS  ;AX</option>
+                          <option value="ALBANIA"> ALBANIA ;AL</option>
+                          <option value="ALGERIA"> ALGERIA ;DZ</option>
+                          <option value="AMERICAN SAMOA"> AMERICAN SAMOA ;AS</option>
+                          <option value="ANDORRA"> ANDORRA ;AD</option>
+                            <option value="ANGOLA"> ANGOLA;AO </option>
+                            <option value="ANGUILLA"> ANGUILLA ;AI</option>
+                            <option value="ANTARCTICA"> ANTARCTICA;AQ</option>
+                            <option value="ANTIGUA AND BARBUDA">ANTIGUA AND BARBUDA;AG</option>
+                            <option value="ARGENTINA">ARGENTINA;AR</option>
+                            <option value="ARMENIA">ARMENIA;AM</option>
+                            <option value="ARUBA">ARUBA;AW</option>
+                            <option value="AUSTRALIA">AUSTRALIA;AU</option>
+                            <option value="AUSTRIA">AUSTRIA;AT</option>
+                            <option value="AZERBAIJAN">AZERBAIJAN;AZ</option>
+                            <option value="BAHAMAS">BAHAMAS;BS</option>
+                            <option value="BAHRAIN">BAHRAIN;BH</option>
+                            <option value="BANGLADESH">BANGLADESH;BD</option>
+                            <option value="BARBADOS">BARBADOS;BB</option>
+                            <option value="BELARUS">BELARUS;BY</option>
+                            <option value="BELGIUM">BELGIUM;BE</option>
+                            <option value="BELIZE">BELIZE;BZ</option>
+                            <option value="BENIN">BENIN;BJ</option>
+                            <option value="BERMUDA">BERMUDA;BM</option>
+                            <option value="BHUTAN">BHUTAN;BT</option>
+                            <option value="BOLIVIA"> BOLIVIA, PLURINATIONAL STATE OF;BO</option>
+                            <option value="BONAIRE"> BONAIRE, SINT EUSTATIUS AND SABA;BQ</option>
+                            <option value="BOSNIA"> BOSNIA AND HERZEGOVINA;BA</option>
+                            <option value="BOTSWANA">BOTSWANA;BW</option>
+                            <option value="BOUVET"> BOUVET ISLAND;BV</option>
+                            <option value="BRAZIL">BRAZIL;BR</option>
+                            <option value="BRITISH INDIAN OCEAN TERRITORY"> INDIAN OCEAN TERRITORY;IO</option>
+                            <option value="BRUNEI">BRUNEI DARUSSALAM;BN</option>
+                            <option value="BULGARIA">BULGARIA;BG</option>
+                            <option value="BURKINA">BURKINA FASO;BF</option>
+                            <option value="BURUNDI">BURUNDI;BI</option>
+                            <option value="CAMBODIA">CAMBODIA;KH</option>
+                            <option value="CAMEROON">CAMEROON;CM</option>
+                            <option value="CANADA">CANADA;CA</option>
+                            <option value="CAPE VERDE">CAPE VERDE;CV</option>
+                            <option value="CAYMAN ISLANDS">CAYMAN ISLANDS;KY</option>
+                            <option value="CENTRAL AFRICAN REPUBLIC">CENTRAL AFRICAN REPUBLIC;CF</option>
+                            <option value="CHAD">CHAD;TD</option>
+                            <option value="CHILE">CHILE;CL</option>
+                            <option value="CHINA">CHINA;CN</option>
+                            <option value="CHRISTMAS ISLAND">CHRISTMAS ISLAND;CX</option>
+                            <option value="COCOS ">COCOS (KEELING) ISLANDS;CC</option>
+                            <option value="COLOMBIA">COLOMBIA;CO</option>
+                            <option value="COMOROS">COMOROS;KM</option>
+                            <option value="CONGO">CONGO;CG</option>
+                            <option value="CONGO THE DEMOCRATIC REPUBLIC OF THE">CONGO, THE DEMOCRATIC REPUBLIC OF THE;CD</option>
+                            <option value="COOK ISLANDS">COOK ISLANDS;CK</option>
+                            <option value="COSTA RICA">COSTA RICA;CR</option>
+                            <option value="COTE D IVOIRE">CÔTE D'IVOIRE;CI</option>
+                            <option value="CROATIA">CROATIA;HR</option>
+                            <option value="CUBA">CUBA;CU</option>
+                            <option value="CURAÇAO">CURAÇAO;CW</option>
+                            <option value="CYPRUS">CYPRUS;CY</option>
+                            <option value="CZECH ">CZECH REPUBLIC;CZ</option>
+                            <option value="DENMARK">DENMARK;DK</option>
+                            <option value="DJIBOUTI">DJIBOUTI;DJ</option>
+                            <option value="DOMINICA">DOMINICA;DM</option>
+                            <option value="DOMINICAN REPUBLIC">DOMINICAN REPUBLIC;DO</option>
+                            <option value="ECUADOR">ECUADOR;EC</option>
+                            <option value="EGYPT">EGYPT;EG</option>
+                            <option value="EL SALVADOR">EL SALVADOR;SV</option>
+                            <option value="EQUATORIAL GUINEA">EQUATORIAL GUINEA;GQ</option>
+                            <option value="ERITREA">ERITREA;ER</option>
+                            <option value="ESTONIA">ESTONIA;EE</option>
+                            <option value="ETHIOPIA">ETHIOPIA;ET</option>
+                            <option value="FALKLAND ISLANDS (MALVINAS)">FALKLAND ISLANDS (MALVINAS);FK</option>
+                            <option value="FAROE ISLANDS">FAROE ISLANDS;FO</option>
+                            <option value="FIJI">FIJI;FJ</option>
+                            <option value="FINLAND">FINLAND;FI</option>
+                            <option value="FRANCE">FRANCE;FR</option>
+                            <option value="FRENCH GUIANA">FRENCH GUIANA;GF</option>
+                            <option value="FRENCH POLYNESIA">FRENCH POLYNESIA;PF</option>
+                            <option value="FRENCH SOUTHERN TERRITORIES">FRENCH SOUTHERN TERRITORIES;TF</option>
+                            <option value="GABON">GABON;GA</option>
+                            <option value="GAMBIA">GAMBIA;GM</option>
+                            <option value="GEORGIA">GEORGIA;GE</option>
+                            <option value="GERMANY">GERMANY;DE</option>
+                            <option value="GHANA">GHANA;GH</option>
+                            <option value="GIBRALTAR">GIBRALTAR;GI</option>
+                            <option value="GREECE">GREECE;GR</option>
+                            <option value="GREENLAND">GREENLAND;GL</option>
+                            <option value="GRENADA">GRENADA;GD</option>
+                            <option value="GUADELOUPE">GUADELOUPE;GP</option>
+                            <option value="GUAM">GUAM;GU</option>
+                            <option value="GUATEMALA">GUATEMALA;GT</option>
+                            <option value="GUERNSEY">GUERNSEY;GG</option>
+                            <option value="GUINEA">GUINEA;GN</option>
+                            <option value="GUINEA">GUINEA-BISSAU;GW</option>
+                            <option value="GUYANA">GUYANA;GY</option>
+                            <option value="HAITI">HAITI;HT</option>
+                            <option value="HEARD ISLAND AND MCDONALD ISLANDS">HEARD ISLAND AND MCDONALD ISLANDS;HM</option>
+                            <option value="HOLY SEE (VATICAN CITY STATE)">HOLY SEE (VATICAN CITY STATE);VA</option>
+                            <option value="HONDURAS">HONDURAS;HN</option>
+                            <option value="HONG KONG">HONG KONG;HK</option>
+                            <option value="HUNGARY">HUNGARY;HU</option>
+                            <option value="ICELAND">ICELAND;IS</option>
+                            <option value="INDIA">INDIA;IN</option>
+                            <option value="INDONESIA">INDONESIA;ID</option>
+                            <option value="IRAN">IRAN, ISLAMIC REPUBLIC OF;IR</option>
+                            <option value="IRAQ">IRAQ;IQ</option>
+                            <option value="IRELAND">IRELAND;IE</option>
+                            <option value="ISLE OF MAN">ISLE OF MAN;IM</option>
+                            <option value="ISRAEL">ISRAEL;IL</option>
+                            <option value="ITALY">ITALY;IT</option>
+                            <option value="JAMAICA">JAMAICA;JM</option>
+                            <option value="JAPAN">JAPAN;JP</option>
+                            <option value="JERSEY">JERSEY;JE</option>
+                            <option value="JORDAN">JORDAN;JO</option>
+                            <option value="KAZAKHSTAN">KAZAKHSTAN;KZ</option>
+                            <option value="KENYA">KENYA;KE</option>
+                            <option value="KIRIBATI">KIRIBATI;KI</option>
+                            <option value="KOREA, DEMOCRATIC PEOPLE'S REPUBLIC OF">KOREA, DEMOCRATIC PEOPLE'S REPUBLIC OF;KP</option>
+                            <option value="KOREA, REPUBLIC OF">KOREA, REPUBLIC OF;KR</option>
+                            <option value="KUWAIT">KUWAIT;KW</option>
+                            <option value="KYRGYZSTAN">KYRGYZSTAN;KG</option>
+                            <option value="LAO PEOPLE'S DEMOCRATIC REPUBLIC">LAO PEOPLE'S DEMOCRATIC REPUBLIC;LA</option>
+                            <option value="LATVIA">LATVIA;LV</option>
+                            <option value="LEBANON">LEBANON;LB</option>
+                            <option value="LESOTHO">LESOTHO;LS</option>
+                            <option value="LIBERIA">LIBERIA;LR</option>
+                            <option value="LIBYA">LIBYA;LY</option>
+                            <option value="LIECHTENSTEIN">LIECHTENSTEIN;LI</option>
+                            <option value="LITHUANIA">LITHUANIA;LT</option>
+                            <option value="LUXEMBOURG">LUXEMBOURG;LU</option>
+                            <option value="MACAO">MACAO;MO</option>
+                            <option value="MACEDONIA">MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF;MK</option>
+                            <option value="MADAGASCAR">MADAGASCAR;MG</option>
+                            <option value="MALAWI">MALAWI;MW</option>
+                            <option value="MALAYSIA">MALAYSIA;MY</option>
+                            <option value="MALDIVES">MALDIVES;MV</option>
+                            <option value="MALI">MALI;ML</option>
+                            <option value="MALTA">MALTA;MT</option>
+                            <option value="MARSHALL ISLANDS">MARSHALL ISLANDS;MH</option>
+                            <option value="MARTINIQUE">MARTINIQUE;MQ</option>
+                            <option value="MAURITANIA">MAURITANIA;MR</option>
+                            <option value="MAURITIUS">MAURITIUS;MU</option>
+                            <option value="MAYOTTE">MAYOTTE;YT</option>
+                            <option value="MEXICO">MEXICO;MX</option>
+                            <option value="MICRONESIA">MICRONESIA, FEDERATED STATES OF;FM</option>
+                            <option value="MOLDOVA">MOLDOVA, REPUBLIC OF;MD</option>
+                            <option value="MONACO">MONACO;MC</option>
+                            <option value="MONGOLIA">MONGOLIA;MN</option>
+                            <option value="MONTENEGRO">MONTENEGRO;ME</option>
+                            <option value="MONTSERRAT">MONTSERRAT;MS</option>
+                            <option value="MOROCCO">MOROCCO;MA</option>
+                            <option value="MOZAMBIQUE">MOZAMBIQUE;MZ</option>
+                            <option value="MYANMAR">MYANMAR;MM</option>
+                            <option value="NAMIBIA">NAMIBIA;NA</option>
+                            <option value="NAURU">NAURU;NR</option>
+                            <option value="NEPAL">NEPAL;NP</option>
+                            <option value="NETHERLANDS">NETHERLANDS;NL</option>
+                            <option value="NEW CALEDONIA">NEW CALEDONIA;NC</option>
+                            <option value="NEW ZEALAND">NEW ZEALAND;NZ</option>
+                            <option value="NICARAGUA">NICARAGUA;NI</option>
+                            <option value="NIGER">NIGER;NE</option>
+                            <option value="NIGERIA">NIGERIA;NG</option>
+                            <option value="NIUE">NIUE;NU</option>
+                            <option value="NORFOLK ISLAND">NORFOLK ISLAND;NF</option>
+                            <option value="NORTHERN MARIANA ISLANDS">NORTHERN MARIANA ISLANDS;MP</option>
+                            <option value="NORWAY">NORWAY;NO</option>
+                            <option value="OMAN">OMAN;OM</option>
+                            <option value="PAKISTAN">PAKISTAN;PK</option>
+                            <option value="PALAU">PALAU;PW</option>
+                            <option value="PALESTINE">PALESTINE, STATE OF;PS</option>
+                            <option value="PANAMA">PANAMA;PA</option>
+                            <option value="PAPUA NEW GUINEA">PAPUA NEW GUINEA;PG</option>
+                            <option value="PARAGUAY">PARAGUAY;PY</option>
+                            <option value="PERU">PERU;PE</option>
+                            <option value="PHILIPPINES">PHILIPPINES;PH</option>
+                            <option value="PITCAIRN">PITCAIRN;PN</option>
+                            <option value="POLAND">POLAND;PL</option>
+                            <option value="PORTUGAL">PORTUGAL;PT</option>
+                            <option value="PUERTO RICO">PUERTO RICO;PR</option>
+                            <option value="QATAR">QATAR;QA</option>
+                            <option value="RÉUNION">RÉUNION;RE</option>
+                            <option value="ROMANIA">ROMANIA;RO</option>
+                            <option value="RUSSIAN FEDERATION">RUSSIAN FEDERATION;RU</option>
+                            <option value="RWANDA">RWANDA;RW</option>
+                            <option value="SAINT BARTHELEMY">SAINT BARTHÉLEMY;BL</option>
+                            <option value="SAINT HELENA">SAINT HELENA, ASCENSION AND TRISTAN DA CUNHA;SH</option>
+                            <option value="SAINT KITTS AND NEVIS">SAINT KITTS AND NEVIS;KN</option>
+                            <option value="SAINT LUCIA">SAINT LUCIA;LC</option>
+                            <option value="SAINT MARTIN (FRENCH PART)">SAINT MARTIN (FRENCH PART);MF</option>
+                            <option value="SAINT PIERRE AND MIQUELON">SAINT PIERRE AND MIQUELON;PM</option>
+                            <option value="SAINT VINCENT AND THE GRENADINES">SAINT VINCENT AND THE GRENADINES;VC</option>
+                            <option value="SAMOA">SAMOA;WS</option>
+                            <option value="SAN MARINO">SAN MARINO;SM</option>
+                            <option value="SAO TOME AND PRINCIPE">SAO TOME AND PRINCIPE;ST</option>
+                            <option value="SAUDI ARABIA">SAUDI ARABIA;SA</option>
+                            <option value="SENEGAL">SENEGAL;SN</option>
+                            <option value="SERBIA">SERBIA;RS</option>
+                            <option value="SEYCHELLES">SEYCHELLES;SC</option>
+                            <option value="SIERRA LEONE">SIERRA LEONE;SL</option>
+                            <option value="SINGAPORE">SINGAPORE;SG</option>
+                            <option value="SINT MAARTEN (DUTCH PART)">SINT MAARTEN (DUTCH PART);SX</option>
+                            <option value="SLOVAKIA">SLOVAKIA;SK</option>
+                            <option value="SLOVENIA">SLOVENIA;SI</option>
+                            <option value="SOLOMON ISLANDS">SOLOMON ISLANDS;SB</option>
+                            <option value="SOMALIA">SOMALIA;SO</option>
+                            <option value="SOUTH AFRICA">SOUTH AFRICA;ZA</option>
+                            <option value="SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS">SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS;GS</option>
+                            <option value="SOUTH SUDAN">SOUTH SUDAN;SS</option>
+                            <option value="SPAIN">SPAIN;ES</option>
+                            <option value="SRI LANKA">SRI LANKA;LK</option>
+                            <option value="SUDAN">SUDAN;SD</option>
+                            <option value="SURINAME">SURINAME;SR</option>
+                            <option value="SVALBARD AND JAN MAYEN">SVALBARD AND JAN MAYEN;SJ</option>
+                            <option value="SWAZILAND">SWAZILAND;SZ</option>
+                            <option value="SWEDEN">SWEDEN;SE</option>
+                            <option value="SWITZERLAND">SWITZERLAND;CH</option>
+                            <option value="SYRIAN ARAB REPUBLIC">SYRIAN ARAB REPUBLIC;SY</option>
+                            <option value="TAIWAN">TAIWAN, PROVINCE OF CHINA;TW</option>
+                            <option value="TAJIKISTAN">TAJIKISTAN;TJ</option>
+                            <option value="TANZANIA">TANZANIA, UNITED REPUBLIC OF;TZ</option>
+                            <option value="THAILAND">THAILAND;TH</option>
+                            <option value="TIMOR-LESTE">TIMOR-LESTE;TL</option>
+                            <option value="TOGO">TOGO;TG</option>
+                            <option value="TOKELAU">TOKELAU;TK</option>
+                            <option value="TONGA">TONGA;TO</option>
+                            <option value="TRINIDAD AND TOBAGO">TRINIDAD AND TOBAGO;TT</option>
+                            <option value="TUNISIA">TUNISIA;TN</option>
+                            <option value="TURKEY">TURKEY;TR</option>
+                            <option value="TURKMENISTAN">TURKMENISTAN;TM</option>
+                            <option value="TURKS AND CAICOS ISLANDS">TURKS AND CAICOS ISLANDS;TC</option>
+                            <option value="TUVALU">TUVALU;TV</option>
+                            <option value="UGANDA">UGANDA;UG</option>
+                            <option value="UKRAINE">UKRAINE;UA</option>
+                            <option value="UNITED ARAB EMIRATES">UNITED ARAB EMIRATES;AE</option>
+                            <option value="UNITED KINGDOM">UNITED KINGDOM;GB</option>
+                            <option value="UNITED STATES">UNITED STATES;US</option>
+                            <option value="UNITED STATES MINOR OUTLYING ISLANDS">UNITED STATES MINOR OUTLYING ISLANDS;UM</option>
+                            <option value="URUGUAY">URUGUAY;UY</option>
+                            <option value="UZBEKISTAN">UZBEKISTAN;UZ</option>
+                            <option value="VANUATU">VANUATU;VU</option>
+                            <option value="VENEZUELA">VENEZUELA, BOLIVARIAN REPUBLIC OF;VE</option>
+                            <option value="VIETNAM">VIETNAM;VN</option>
+                            <option value="VIRGIN ISLANDS">VIRGIN ISLANDS, BRITISH;VG</option>
+                            <option value="VIRGIN ISLANDS">VIRGIN ISLANDS, U.S.;VI</option>
+                            <option value="WALLIS AND FUTUNA">WALLIS AND FUTUNA;WF</option>
+                            <option value="WESTERN SAHARA">WESTERN SAHARA;EH</option>
+                            <option value="YEMEN">YEMEN;YE</option>
+                            <option value="ZAMBIA">ZAMBIA;ZM</option>
+                            <option value="ZIMBABWE">ZIMBABWE;ZW</option>
+                          <option value=""></option>
+                      </select>
+                      {% else %}
+                         <input type="text" class="form-control" id="strCountry" value="{{ thisCompany.strCountry }}">
+                      {% endif %}
+                  </div>
+              </div>
+          </div>
+           <div class="form-group">
+              <label class="col-sm-6  pull-left"> City</label>
+              <div class="col-sm-12">
+                  <div class="input-group">
+                      <div class="input-group-addon">
+                          <i class="glyphicon glyphicon-map-marker"> </i>
+                      </div>
+                      {% if thisCompany.strCity is none %}
+                        <input type="text" class="form-control" id="strCity">
+                      {% else %}
+                        <input type="text" class="form-control" id="strCity" value="{{ thisCompany.strCity }}">
+                      {% endif %}
+                  </div>
+              </div>
+           </div>
+           <div class="form-group">
+              <label class="col-sm-6  pull-left"> Address</label>
+              <div class="col-sm-12">
+                  <div class="input-group">
+                      <div class="input-group-addon">
+                          <i class="glyphicon glyphicon-map-marker"> </i>
+                      </div>
+                      {% if thisCompany.strAddress is none %}
+                            <input type="text" class="form-control" id="strAddress">
+                      {% else %}
+                            <input type="text" class="form-control" id="strAddress" value="{{ thisCompany.strAddress }}">
+                      {% endif %}
+                  </div>
+              </div>
+           </div>
+           <div class="form-group">
+              <label class="col-sm-6  pull-left"> Website</label>
+              <div class="col-sm-12">
+                  <div class="input-group">
+                      <div class="input-group-addon">
+                          <i class="glyphicon glyphicon-link"> </i>
+                      </div>
+                      {% if thisCompany.strWebsite is none %}
+                            <input type="text" class="form-control" id="strWebsite">
+                      {% else %}
+                            <input type="text" class="form-control" id="strWebsite" value="{{ thisCompany.strWebsite }}">
+                      {% endif %}
+                  </div>
+              </div>
+           </div>
+    </form>
+
+</div>
+
+<div class="box box-body">
+    <div class="box box-header">
+        <h3 class="box-title"> Contact Information</h3>
+    </div>
+    <div class="form-horizontal">
+        <div class="form-group">
+              <label class="col-sm-6 pull-left"> Name</label>
+              <div class="col-sm-12">
+                  <div class="input-group">
+                      <div class="input-group-addon">
+                          <i class="glyphicon glyphicon-user"> </i>
+                      </div>
+                      {% if thisContact.strName is none %}
+                            <input type="text" class="form-control" id="strName">
+                      {% else %}
+                            <input type="text" class="form-control" id="strName" value="{{ thisContact.strName }}">
+                      {% endif %}
+                  </div>
+              </div>
+        </div>
+        <div class="form-group">
+              <label class="col-sm-6 pull-left"> Surname</label>
+              <div class="col-sm-12">
+                  <div class="input-group">
+                      <div class="input-group-addon">
+                          <i class="glyphicon glyphicon-user"> </i>
+                      </div>
+                      {% if thisContact.strSurname is none %}
+                            <input type="text" class="form-control" id="strSurname">
+                      {% else %}
+                            <input type="text" class="form-control" id="strSurname" value="{{ thisContact.strSurname }}">
+                      {% endif %}
+                  </div>
+              </div>
+        </div>
+        <div class="form-group">
+              <label class="col-sm-6 pull-left"> Email</label>
+              <div class="col-sm-12">
+                <div class="input-group">
+                    <div class="input-group-addon">
+                        <i class="glyphicon glyphicon-envelope"> </i>
+                    </div>
+                    {% if thisContact.strEmail is none %}
+                        <input type="text" class="form-control" id="strEmail">
+                    {% else %}
+                        <input type="text" class="form-control" id="strEmail" value="{{ thisContact.strEmail }}">
+                    {% endif %}
+                </div>
+              </div>
+        </div>
+
+        <div class="form-group">
+              <label class="col-sm-6 pull-left"> Cell</label>
+              <div class="col-sm-12">
+                <div class="input-group">
+                    <div class="input-group-addon">
+                        <i class="glyphicon glyphicon-phone"> </i>
+                    </div>
+                    {% if thisContact.strCell is none %}
+                        <input type="text" class="form-control" id="strCell">
+                    {% else %}
+                        <input type="text" class="form-control" id="strCell" value="{{ thisContact.strCell }}">
+                    {% endif %}
+                </div>
+              </div>
+        </div>
+
+        <div class="form-group">
+              <label class="col-sm-6 pull-left"> Services / Products</label>
+              <div class="col-sm-12">
+                  <div class="input-group">
+                      <div class="input-group-addon">
+                          <i class="fa fa-qrcode"> </i>
+                      </div>
+                      {% if thisCompany.strServicesProducts is none %}
+                          <textarea id="strServicesProducts" class="form-control"></textarea>
+                      {% else %}
+                          <textarea id="strServicesProducts" class="form-control">{{ thisCompany.strServicesProducts }}</textarea>
+                      {% endif %}
+                  </div>
+              </div>
+        </div>
+        <div class="form-group">
+              <div class="col-sm-12">
+                  <button type="button" class="btn btn-lg btn-flat btn-app btn-block" id="UpdateCompanyDetailsButt"><strong><i class="glyphicon glyphicon-cloud-upload"> </i> Update Company Details </strong></button>
+              </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-12">
+                <div id="CompanyDetailsINFDIV"></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="/static/dist/js/pages/hireus/companydetails.js"></script>

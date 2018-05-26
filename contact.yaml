@@ -1,0 +1,10 @@
+
+handlers:
+- url: /contact/tickets/.*
+  script: Contact.app
+
+- url: /contact/read/.*
+  script: Contact.app
+
+- url: /contact
+  script: Contact.app

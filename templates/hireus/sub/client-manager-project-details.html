@@ -1,0 +1,57 @@
+
+
+<div class="box box-body with-border">
+    <div class="box box-header with-border">
+        <h3 class="box-title"> Client Project Details</h3>
+    </div>
+    <input type="hidden" class="hidden" id="strProjectID" value="{{ thisProject.strProjectID }}">
+    <form class="form-horizontal">
+        <div class="form-group">
+              <label class="col-sm-6 pull-left"> Project Name  </label>
+              <div class="col-sm-12">
+                  <div class="input-group">
+                      <div class="input-group-addon">
+                          <i class="fa fa-magic"> </i>
+                      </div>
+                      <input type="text" class="form-control" id="strProjectTitle" placeholder="Business Web Application / Website Development" readonly="readonly" value="{{ thisProject.strProjectTitle }}">
+                  </div>
+              </div>
+        </div>
+        <div class="form-group">
+              <label class="col-sm-6 pull-left"> Provide More Details </label>
+              <div class="col-sm-12">
+                  <div class="input-group">
+                      <div class="input-group-addon">
+                          <i class="fa fa-info"> </i>
+                      </div>
+                      <textarea id="strProjectDetails" class="form-control">{{ thisProject.strProjectDetails }}</textarea>
+                  </div>
+              </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-6 pull-left"> Project Total Cost</label>
+            <div class="col-sm-12">
+                <div class="input-group">
+                    <div class="input-group-addon">
+                        <div class="glyphicon glyphicon-credit-card"> </div>
+                    </div>
+                    <input type="text" class="form-control" id="strProjectCost" readonly="readonly" value="{{ thisProject.strTotalCharged }}">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-12">
+                <button type="button" class="btn btn-lg btn-flat btn-app btn-block" id="UpdateProjectButt"><strong> <i class="glyphicon glyphicon-cloud-upload"> </i> Update Project Details</strong></button>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-12">
+                <div id="CreateProjectINFDIV"></div>
+            </div>
+        </div>
+    </form>
+
+</div>
+<script src="/static/dist/js/pages/hireus/client-manager-project-details.js"></script>
